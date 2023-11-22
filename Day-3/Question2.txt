@@ -1,0 +1,23 @@
+
+-----------------------------------------------------
+Question - 2: Display all country flag in the console
+-----------------------------------------------------
+
+var req = new XMLHttpRequest();
+
+req.open('GET' , 'https://restcountries.com/v3.1/all');
+
+req.addEventListener('load', function () {
+	loop(JSON.parse(this.response));
+});
+
+req.send();
+
+console.log(req);
+
+function loop(data = [])
+{
+	for (var x = 0; x < data.length; x++) {
+   console.log("Flag : ", data[x].flag);
+  }
+}

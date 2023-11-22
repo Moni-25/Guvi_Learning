@@ -1,0 +1,26 @@
+
+-----------------------------------------------------------------------------
+Question - 3: print all countries names, regions, sub-regions and populations
+-----------------------------------------------------------------------------
+
+var req = new XMLHttpRequest();
+
+req.open('GET' , 'https://restcountries.com/v3.1/all');
+
+req.addEventListener('load', function () {
+	loop(JSON.parse(this.response));
+});
+
+req.send();
+
+console.log(req);
+
+function loop(data = [])
+{
+	for (var x = 0; x < data.length; x++) {
+   console.log("Country Name : ", data[x].name.common);
+   console.log('Region : ' , data[x].region);
+   console.log('Sub-Region : ' , data[x].subregion);
+   console.log('Population : ' , data[x].population);
+  }
+}
