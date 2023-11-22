@@ -1,0 +1,28 @@
+
+1.	Write blog on diff between http1.1 & http2 
+
+HTTP 1.1
+--------
+    1. It was created in 1997
+    2. Transfer all the request & response data encode into Plain Text Message Form
+    3. It compresses data by itself 
+    4. Head Line Blocking
+       ------------------
+        Established a separate TCP connection for each and every request.
+    5. The client sends a request to a server, then server send a response back to the client
+    6. Establish a separate TCP connection for each and every connection, it will cause the latency and     decrease the overall performance of connection.
+
+HTTP 2
+------
+    1. It was created on 2015
+    2. Transfer all the request & response data encode textual message into Binary Format
+    3. It uses the HPACK for data compression
+    4. Multiplexing
+       ------------
+        It allows multiplexing so multiple requests & responses send over via single TCP connection
+        Secure Remote Protocol (SRP2)
+    5. It establishes a secure connection between a client & a server.
+    6. It uses multiplexing that will helpful for reduce latency and increase overall performance of the connection that happened between client & server.
+    7. HTTP 2 / PUSH
+       -------------
+        It uses Push frame that will helpful for allow a server to send Additional Information to the based-on client request.

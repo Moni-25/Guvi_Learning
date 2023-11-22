@@ -1,0 +1,46 @@
+
+2.	Write a blog Object & its internal representation in Javascript
+
+	i.	 In Javascript, Object is more important data type that mean it is a Reference / Non-Primitive Data Type.
+	ii.	 Objects are more complex & each object may contain any combination of the Primitive data type (String, Number, Boolean, Null, Undefined, NaN) as well as reference data type also.
+	iii. Variables that are assigned a reference value are given a reference or a pointer to that value. That reference or pointer points to the location in memory where the object is stored. The variables don’t actually store the value. It shared the same memory location.
+    
+Object & Properties
+-------------------
+	i.	 Javascript object has properties associated with it
+	ii.	 The properties of an object are defining the characteristics of an object.
+	iii. A property of an object can be explained as a variable that is attached to the   object. 
+	Syntax:
+	-------
+		objectName.propertyName;
+
+	iv.	Both object name & property name are case-sensitive.
+	Example:
+	--------
+		Var myCar = new Obeject();
+		myCar.make = ‘Ford’;
+		myCar.model = ‘Mustang’;
+		myCar.year = 1968;
+	Output:
+	-------
+		Ford
+		Mustang
+		1968
+	v.	Unassigned properties of an object are undefined (and not null).
+	Example:
+	--------
+		myCar.color;     // undefined(not Null)
+
+	vi.	 Properties of JavaScript objects can also be accessed or set using a bracket notation (for more details see property accessors). 
+	vii. Objects are sometimes called associative arrays, since each property is associated with a string value that can be used to access it.
+	Example:
+	--------
+		var myCar = new Object();
+		myCar['make'] = 'Ford';
+		myCar['model'] = 'Mustang';
+		myCar['year'] = 1969;
+		Output:
+	-------
+		Ford
+		Mustang
+		1968

@@ -1,0 +1,36 @@
+
+3.	Read about IP address, Port, HTTP Methods and MAC Address
+
+IP Address
+----------
+	IP referred by Internet Protocol.
+	Each computer/device have physical address.
+	If your computer deal with internet that means you must have a IP address.
+	IP address given by Internet Provider such as Vodafone, Jio, BSNL, Airtel, etc.,
+	It mostly located the computer where it will use like address of house.
+
+Port
+----
+	It basically connecting the device for some purpose.
+	Physical Port
+	-------------
+		USB Port
+		Head Phone Port
+	Virtual Port
+	------------
+		It looks like a door of the home.
+		It mainly used for connect some device to computer via port.
+
+HTTP Method
+-----------
+	There is difference method in HTTP but below methos are most widely used
+		1.	GET – Get the request to server & get the data.
+		2.	POST – Send the data to client & saved the data into the server.
+		3.	PUT – Update data & saved into the server
+		4.	DELETE – Delete the data from the server
+
+MAC Address
+-----------
+	MAC means Medium Access Control Address
+	It is a static address given by the hardware production manufacturer at the time of production.
+	It used for control the other device.
