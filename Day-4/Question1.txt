@@ -1,0 +1,416 @@
+-------------------------------------------
+Question 1a : Print odd numbers in the array
+-------------------------------------------
+Anonymous
+---------
+var oddNumber = function (arr, l) {
+	console.log("Odd numbers in the array");
+	for(var i = 0; i < l; i++)
+  {
+  	if(arr[i]%2 != 0)
+    {
+    	console.log(arr[i])
+    }
+  }
+}
+
+let arr = ['10', '23', '56', '31', '89'];
+var len = arr.length;
+oddNumber(arr, len);
+
+IIFE Function
+-------------
+let arr = ['10', '23', '56', '31', '89'];
+var len = arr.length;
+
+(function (arr, l) {
+	console.log("Odd numbers in the array");
+	for(var i = 0; i < l; i++)
+  {
+  	if(arr[i]%2 != 0)
+    {
+    	console.log(arr[i])
+    }
+  }
+})(arr, len);
+
+(function (arr = []) {
+	console.log("Odd numbers in the array");
+	for(var i = 0; i < arr.length; i++)
+  {
+  	if(arr[i]%2 != 0)
+    {
+    	console.log(arr[i])
+    }
+  }
+})(['10', '23', '56', '31', '89']);
+
+-----------------------------------------------------------
+Question 1b : Print first letter capital in the string array
+-----------------------------------------------------------
+Anonymous
+---------
+var firstCaps = function (array) {
+	let str = array.toLowerCase().split(' ');
+	for(let i = 0; i < str.length; i++)
+  {
+    str[i] = str[i].charAt(0).toUpperCase() + str[i].slice(1);
+  }
+  return str.join(' ');
+}
+
+let array = 'hi hello welcome';
+console.log(firstCaps(array));
+
+IIFE Function
+-------------
+let array = 'hi hello welcome';
+
+var firstCaps = (function (array) {
+	let str = array.toLowerCase().split(' ');
+	for(let i = 0; i < str.length; i++)
+  {
+    str[i] = str[i].charAt(0).toUpperCase() + str[i].slice(1);
+  }
+  return str.join(' ');
+})(array);
+
+console.log(firstCaps);
+
+Anonymous & IIFE Function
+-------------------------
+
+--------------------------------------------
+Question 1c : Sum of all Number in the array
+--------------------------------------------
+Anonymous
+---------
+var sumArray = function (arr, l) {
+	for(var i = 0; i < l; i++)
+  {
+  	sum = sum + Number(arr[i]);
+  }
+  return sum;
+}
+
+var sum = 0;
+let arr = ['10', '23', '56', '31', '89']; // [10, 23, 56, 31, 89]
+var len = arr.length;
+console.log("Sum of the array =  ", sumArray(arr, len));
+
+IIFE Function
+-------------
+var sum = 0;
+let arr = ['10', '23', '56', '31', '89'];
+var len = arr.length;
+
+var one = (function (arr, l) {
+	for(var i = 0; i < l; i++)
+  {
+  	sum = sum + Number(arr[i]);
+  }
+  return sum;
+})(arr, len);
+
+console.log("Sum of the array =  ", one)
+
+---------------------------------------------
+Question 1d : Print prime numbers in the array
+---------------------------------------------
+Anonymous
+---------
+var prime = (array) => {
+	let count; 
+  let  output = [];
+	for(let i = 0; i < array.length; i++)
+  {
+    count = 0;
+   	for(let j = 2; j < array[i]; j++)
+    {
+			if(array[i] % j == 0)
+      {
+      	count = 1;
+        break;
+      }
+    }
+    if(count == 0){
+  	output.push(array[i]);
+  	}
+  }
+  return output;
+}
+
+var array = [2, 4, 6, 11, 12, 18, 7 ];
+console.log(prime(array));
+
+IIFE Function
+-------------
+let array = [34, 56, 3, 56, 4, 343, 68, 56, 34, 87, 8, 45, 34];
+var flag = false;
+
+var primeNumber = (function (array) {
+	let count; 
+  let  output = [];
+	for(let i = 0; i < array.length; i++)
+  {
+    count = 0;
+   	for(let j = 2; j < array[i]; j++)
+    {
+			if(array[i] % j == 0)
+      {
+      	count = 1;
+        break;
+      }
+    }
+    if(count == 0){
+  	output.push(array[i]);
+  	}
+  }
+  return output;
+})(array);
+
+console.log(primeNumber);
+
+-----------------------------------------------------------
+Question 1e : Return all palindrome in the array
+-----------------------------------------------------------
+Anonymous
+---------
+var isPalindrome = (arr) => {
+  var start = 0;
+  var end = arr.length - 1;
+  
+  while(start < end) {
+      if(arr[start] == arr[end])
+      {
+          return true;
+      }
+      start += 1;
+      end -= 1;
+  }
+  return false;
+}
+
+function isPalinArray(arr, n) 
+{ 
+    for (let i = 0; i < n; i++) 
+    {
+      let ans = isPalindrome(arr[i]); 
+      if (ans == true) 
+         console.log(arr[i]); 
+     } 
+}
+
+var arr = ['madam', 'hello', 'hi', 'mam'];
+var n = arr.length;
+var ans1 = isPalinArray(arr,n);
+
+IIFEFunction
+------------
+var isPalindrome = (arr) => {
+  var start = 0;
+  var end = arr.length - 1;
+  
+  while(start < end) {
+      if(arr[start] == arr[end])
+      {
+          return true;
+      }
+      start += 1;
+      end -= 1;
+  }
+  return false;
+}
+
+var arr = ['121', '234', '353', '454', '342', '12421'];
+var n = arr.length;
+
+((arr, n) => {
+       for (let i = 0; i < n; i++) 
+        { 
+            let ans = isPalindrome(arr[i]); 
+            if (ans == true) 
+                console.log(arr[i]); 
+        } 
+})(arr,n);
+
+-----------------------------------------------------------------
+Question 1f : Return median of two sorted arrays of the same size
+-----------------------------------------------------------------
+Anonymous
+---------
+var getMedian = (arr1, arr2, n) => {
+    var i = 0, j = 0, count;
+    var m1 = -1, m2 = -1;
+    for(count = 0; count <= n; count++)
+    {
+        if(i == n)
+        {
+            m1 = m2;
+            m2 = arr2[0];
+            break;
+        }
+        else if(j == n)
+        {
+            m1 = m2;
+            m2 = arr1[0];
+            break;
+        }
+        if(arr1[i] <= arr2[j])
+        {
+            m1 = m2;
+            m2 = arr1[i];
+            i++;
+        }
+        else
+        {
+            m1 = m2;
+            m2 = arr2[j];
+            j++;   
+        }
+    }
+    //console.log(m1,m2)
+    return (m1+m2) / 2;
+}
+
+var arr1 = [1, 12, 15, 26, 38];
+var arr2 = [2, 13, 17, 30, 45];
+var n = arr1.length;
+var n2 = arr2.length;
+if(n == n2)
+    console.log("Median Value =", getMedian(arr1, arr2, n));
+else
+    console.log("Arrays is in unequal size");
+
+IIFE Function
+-------------
+var arr1 = [1, 12, 15, 26, 38];
+var arr2 = [2, 13, 17, 30, 45];
+var n = arr1.length;
+var n2 = arr2.length;
+
+var getMedian = ((arr1, arr2, n) => {
+    var i = 0, j = 0, count;
+    var m1 = -1, m2 = -1;
+    for(count = 0; count <= n; count++)
+    {
+        if(i == n)
+        {
+            m1 = m2;
+            m2 = arr2[0];
+            break;
+        }
+        else if(j == n)
+        {
+            m1 = m2;
+            m2 = arr1[0];
+            break;
+        }
+        if(arr1[i] <= arr2[j])
+        {
+            m1 = m2;
+            m2 = arr1[i];
+            i++;
+        }
+        else
+        {
+            m1 = m2;
+            m2 = arr2[j];
+            j++;   
+        }
+    }
+    //console.log(m1,m2)
+    return (m1+m2) / 2;
+})(arr1, arr2, n)
+
+if(n == n2)
+    console.log("Median Value =", getMedian);
+else
+    console.log("Arrays is in unequal size");
+
+-----------------------------------------------------------
+Question 1g : Remove duplicate element from the array
+-----------------------------------------------------------
+Anonymous
+---------
+var removeDuplicate = (arr) => {
+    let output = [];
+    for(var i = 0; i < arr.length; i++)
+    {
+        var index = output.indexOf(arr[i]);
+        if(index == -1)
+        {
+            output.push(arr[i]);
+        }
+    }
+    console.log(output);
+}
+
+var arr = [12, 3, 45, 67, 3, 12, 56, 78, 67];
+removeDuplicate(arr);
+
+
+IIFE Function
+-------------
+var arr = [12, 3, 45, 67, 3, 12, 56, 78, 67, 78];
+
+((arr) => {
+    let output = [];
+    for(var i = 0; i < arr.length; i++)
+    {
+        var index = output.indexOf(arr[i]);
+        if(index == -1)
+        {
+            output.push(arr[i]);
+        }
+    }
+    console.log(output);
+})(arr);
+
+----------------------------------------
+Question 1h : Rotate an array by K times
+----------------------------------------
+Anonymous
+---------
+var rotateValue = (arr, k) => {
+    let n = arr.length;
+    k = k % n;
+    let output = [];
+    for(var i = 0; i < n; i++)
+    {
+        if(i < k)
+        {
+            output.push(arr[n+i-k]);
+        }
+        else {
+            output.push(arr[i-k]);
+        }
+    }
+    console.log(output.join(' '))
+}
+
+var arr = [1,2,3,4,5];
+var k = 4;
+rotateValue(arr, k)
+
+IIFE Function
+-------------
+var arr = [1,2,3,4,5];
+var k = 4;
+
+((arr, k) => {
+    let n = arr.length;
+    k = k % n;
+    let output = [];
+    for(var i = 0; i < n; i++)
+    {
+        if(i < k)
+        {
+            output.push(arr[n+i-k]);
+        }
+        else {
+            output.push(arr[i-k]);
+        }
+    }
+    console.log(output.join(' '))
+})(arr,k);

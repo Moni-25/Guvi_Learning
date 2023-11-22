@@ -1,0 +1,109 @@
+-------------------------------------------
+Question 2a : Print odd numbers in the array
+-------------------------------------------
+const oddNumber = function (arr, l) {
+	console.log("Odd numbers in the array");
+	for(var i = 0; i < l; i++)
+  {
+  	if(arr[i]%2 != 0)
+    {
+    	console.log(arr[i])
+    }
+  }
+}
+
+let arr = ['10', '23', '56', '31', '89'];
+var len = arr.length;
+oddNumber(arr, len);
+
+------------------------------------------------------------
+Question 2b : Print first letter capital in the string array
+------------------------------------------------------------
+var firstCaps = function (array) {
+	let str = array.toLowerCase().split(' ');
+	for(let i = 0; i < str.length; i++)
+  {
+    str[i] = str[i].charAt(0).toUpperCase() + str[i].slice(1);
+  }
+  return str.join(' ');
+}
+
+let array = 'hi hello welcome';
+console.log(firstCaps(array));
+
+---------------------------------------------
+Question 2c : Sum of all Number in the array
+---------------------------------------------
+const sumArray = function (arr, l) {
+	for(var i = 0; i < l; i++)
+  {
+  	sum = sum + Number(arr[i]);
+  }
+  return sum;
+}
+
+var sum = 0;
+let arr = ['10', '23', '56', '31', '89']; // [10, 23, 56, 31, 89]
+var len = arr.length;
+console.log("Sum of the array =  ", sumArray(arr, len));
+
+----------------------------------------------
+Question 2d : Print prime numbers in the array
+----------------------------------------------
+Anonymous
+---------
+const prime = (array) => {
+	let count; 
+  let  output = [];
+	for(let i = 0; i < array.length; i++)
+  {
+    count = 0;
+   	for(let j = 2; j < array[i]; j++)
+    {
+			if(array[i] % j == 0)
+      {
+      	count = 1;
+        break;
+      }
+    }
+    if(count == 0){
+  	output.push(array[i]);
+  	}
+  }
+  return output;
+}
+
+var array = [2, 4, 6, 11, 12, 18, 7 ];
+console.log(prime(array));
+
+------------------------------------------------
+Question 2e : Return all palindrome in the array
+------------------------------------------------
+const isPalindrome = (arr) => {
+  var start = 0;
+  var end = arr.length - 1;
+  
+  while(start < end) {
+      if(arr[start] == arr[end])
+      {
+          return true;
+      }
+      start += 1;
+      end -= 1;
+  }
+  return false;
+}
+
+function isPalinArray(arr, n) 
+{ 
+    for (let i = 0; i < n; i++) 
+    {
+      let ans = isPalindrome(arr[i]); 
+      if (ans == true) 
+         console.log(arr[i]); 
+     } 
+}
+
+var arr = ['madam', 'hello', 'hi', 'mam'];
+var n = arr.length;
+var ans1 = isPalinArray(arr,n);
