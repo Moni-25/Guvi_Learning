@@ -1,0 +1,49 @@
+---------------------------------------------------------
+Question - 4 : write a class to calculate the uber price.
+---------------------------------------------------------
+
+class Uber
+{
+    constructor(base_fare, booking_fee)
+    {
+        this.base_fare = base_fare;
+        this.booking_fee = booking_fee;
+    }
+    getBasicFare()
+    {
+    	var basic_fare = this.base_fare + this.booking_fee;
+      return basic_fare;
+    }
+    getTime_Ride()
+    {
+    		var minute = this.time * 60;
+				var time_fare = minute * this.cost_per_minute;	
+        return time_fare;
+    }
+    setTime_Ride(time, cost_per_minute)
+    {
+       this.cost_per_minute = cost_per_minute;
+       this.time = time;
+    }
+    getRide_Distance()
+    {
+    		//convert kilometer into mile
+    		var mile = this.distance * 0.6213;
+    		var distance_fare = mile * this.cost_per_mile;
+        return distance_fare;
+    }
+    setRide_Distance(distance, cost_per_mile)
+    {
+    	this.distance = distance;
+      this.cost_per_mile = cost_per_mile;
+    }
+}
+
+var uber = new Uber(100, 50);
+uber.setTime_Ride(1,2);
+uber.setRide_Distance(20, 2);
+var distance_ride_value = uber.getRide_Distance();
+var time_ride_value = uber.getTime_Ride();
+var basic_fare_value = uber.getBasicFare();
+var total_fee = basic_fare_value + distance_ride_value + time_ride_value;
+console.log("Total Fees : ", total_fee)

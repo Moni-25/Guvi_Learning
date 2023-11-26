@@ -1,0 +1,39 @@
+------------------------------------------------------------
+Question 3 : Write a “person” class to hold all the details.
+------------------------------------------------------------
+
+class Person
+{
+    constructor(name, age, dob)
+    {
+        this.name = name;
+        this.age = age;
+        this.dob = dob;
+    }
+    basicDetails()
+    {
+    	var name = this.name, age = this.age, dob = this.dob;
+    	console.log("Name : ", name);
+      console.log("Age : ", age);
+      console.log("Date of Birth : ", dob)
+    }
+    getAddress()
+    {
+       console.log('Street Name : ', this.street);
+       console.log('Village : ', this.village);
+       console.log('Pincode : ', this.pincode);
+    }
+    setAddress(street, village, pincode)
+    {
+    	this.street = street;
+      this.village = village;
+      this.pincode = pincode;
+    }
+}
+
+var person = new Person("XXX", 26, "01-Jan-1997");
+//console.log(father);
+console.log("Basic Details of ", person.name);
+person.basicDetails();
+person.setAddress('South Street', 'Chennai', 600000);
+person.getAddress();
