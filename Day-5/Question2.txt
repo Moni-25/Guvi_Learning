@@ -1,0 +1,37 @@
+---------------------------------------------------------
+Question - 2 : Create your own resume data in JSON format
+---------------------------------------------------------
+
+let data = {
+    "basics": {
+      "name": "Monica",
+      "email": "xxx@gamil.com",
+      "phone": 987654321,
+      "degree": "M.E",
+      "address": {
+        "street": "South Street",
+        "city": "Chennai",
+        "pincoce": 600030,
+        "state": "Tamilnadu",
+        "country": "India"
+      },
+    },
+    "education": 
+      {
+        "institution": "XYZ College Of Engineering",
+        "department": "M.E - CSE",
+        "passout": 2019,
+        "gpa": 8.2
+      },
+    "skills": 
+      {
+        "name": "Php, Mysql, C++",
+        "level": "Intermediate"
+      },
+    "languages": 
+      {
+        "language": "Tamil,Enlish",
+      }
+  }
+  console.log(data);
+  
