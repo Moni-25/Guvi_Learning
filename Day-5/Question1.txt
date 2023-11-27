@@ -1,0 +1,75 @@
+---------------------------------------------
+Question - 1 : JSON Iterate By Using For-Loop
+---------------------------------------------
+let data = [{
+      "name": "Monica",
+      "email": "xxx@gamil.com",
+      "phone": 987654321,
+      "address": {
+        "street": "South Street",
+        "city": "Chennai",
+        "pincoce": 600030,
+        "state": "Tamilnadu",
+        "country": "India"
+      }
+}]
+for(var i = 0; i < data.length; i++)
+{
+  var obj = data[i];
+  console.log(obj.name);
+  console.log(obj.email);
+  console.log(obj.phone);
+  console.log(obj.address.street);
+  console.log(obj.address.city);
+  console.log(obj.address.pincode);
+  console.log(obj.address.state);
+  console.log(obj.address.country);
+}  
+
+------------------------------
+JSON Iterate By Using For-in
+------------------------------
+
+let data = {
+    "basics": {
+      "name": "Monica",
+      "email": "xxx@gamil.com",
+      "phone": 987654321,
+      "address": {
+        "street": "South Street",
+        "city": "Chennai",
+        "pincoce": 600030,
+        "state": "Tamilnadu",
+        "country": "India"
+      }
+     }
+}
+
+for(var i in data)
+{
+	//console.log(data[i])
+	console.log(data[i].name);
+	console.log(data[i].email);
+	console.log(data[i].address.street);
+	console.log(data[i].address.city);
+	console.log(data[i].address.pincoce);
+	console.log(data[i].address.state);
+	console.log(data[i].address.country);
+}  
+
+------------------------------
+JSON Iterate By Using ForEach
+------------------------------
+
+let value = [{
+      "name": "Monica",
+      "email": "xxx@gamil.com",
+      "phone": 987654321 }];
+      
+value.forEach((obj) => { console.log(obj.phone)})
+
+------------------------------
+JSON Iterate By Using For-of
+------------------------------
+
+In for-of, it will give value as element of array but it will not working for an objects.	
